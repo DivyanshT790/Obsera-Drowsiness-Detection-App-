@@ -25,8 +25,7 @@ EYE_MODEL_PATH = MODEL_DIR / "eye_cnn_premade.h5"
 YAWN_MODEL_PATH = MODEL_DIR / "yawn_svm.joblib"
 
 
-CNN_URL = "https://drive.google.com/uc?export=download&id=1eMN0cNsUVI89h4SXlwq6hG_eeRtL4Q-7
-"
+CNN_URL = "https://drive.google.com/uc?export=download&id=1eMN0cNsUVI89h4SXlwq6hG_eeRtL4Q-7"
 SVM_URL = "https://drive.google.com/uc?export=download&id=1Vl18OhPvav9uXjXvvu9Mm-89r2k9DdT7"
 
 
