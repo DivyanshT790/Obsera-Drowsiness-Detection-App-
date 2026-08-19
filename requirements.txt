@@ -3,7 +3,7 @@ streamlit-webrtc==0.76.2
 mediapipe==0.10.21
 tensorflow==2.18.0
 numpy>=1.26,<2.1
-opencv-python>=4.10,<5
+opencv-python-headless==4.10.0.84
 joblib>=1.4,<2
 pandas>=2.2,<3
 av>=14,<17
