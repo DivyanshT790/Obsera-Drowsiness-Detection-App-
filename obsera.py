@@ -1,4 +1,5 @@
-
+import urllib.request
+from pathlib import Path
 import streamlit as st
 import streamlit.components.v1 as components
 from streamlit_webrtc import webrtc_streamer, VideoProcessorBase
@@ -13,7 +14,45 @@ from collections import deque
 import numpy as np
 import cv2
 import mediapipe as mp
+# ============================================================
+# DOWNLOAD MODELS
+# ============================================================
 
+MODEL_DIR = Path("models")
+MODEL_DIR.mkdir(exist_ok=True)
+
+EYE_MODEL_PATH = MODEL_DIR / "eye_cnn_premade.h5"
+YAWN_MODEL_PATH = MODEL_DIR / "yawn_svm.joblib"
+
+
+CNN_URL = "https://drive.google.com/uc?export=download&id=1eMN0cNsUVI89h4SXlwq6hG_eeRtL4Q-7
+"
+SVM_URL = "https://drive.google.com/uc?export=download&id=1Vl18OhPvav9uXjXvvu9Mm-89r2k9DdT7"
+
+
+def download_model(url, path):
+
+    if not path.exists():
+
+        print(f"Downloading {path.name}...")
+
+        urllib.request.urlretrieve(
+            url,
+            path
+        )
+
+        print(f"Downloaded {path.name}")
+
+
+download_model(
+    CNN_URL,
+    EYE_MODEL_PATH
+)
+
+download_model(
+    SVM_URL,
+    YAWN_MODEL_PATH
+)
 # Optional ML libs
 try:
     import tensorflow as tf
